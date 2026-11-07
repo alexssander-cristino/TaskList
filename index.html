@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskList</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <header id="main-header">
+            <div class="visual">
+                <h1>TaskList</h1>
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p>Organize suas tarefas e acompanhe sua produtividade</p>   
+            <div class="controles">
+                <button class="btn" id="add-task-btn">Adicionar Tarefa</button>
+            </div> 
+        </header>  
+        
+        <main>
+            <section id="welcome-section">
+                <h2>Minhas Tarefas</h2>
+                <p>Gerencie suas tarefas de forma eficiente</p>           
+             </section>
+
+             <section id="task-stats">
+                <div class="card">
+                     <span>
+                        Total de Tarefas: <span id="total-tasks">0</span>
+                     </span>
+                </div>
+                <div class="card">
+                     <span>
+                        Tarefas Concluídas: <span id="completed-tasks">0</span>
+                     </span>
+                </div>
+                <div class="card">
+                     <span>
+                        Tarefas Pendentes: <span id="pending-tasks">0</span>
+                     </span>
+                </div>
+             </section>
+
+             <section class="task-form-section">
+                <h2>Adicionar Nova Tarefa</h2>
+                <form id="task-form">
+                    <input type="text" id="task-title" placeholder="Digite a tarefa..." required>
+                    <textarea id="task-description" placeholder="Digite a descrição da tarefa..."></textarea>
+                    <select id="task-priority" required>
+                        <option value="" selected disabled>Selecione a prioridade</option>
+                        <option value="high">Alta</option>
+                        <option value="medium">Média</option>
+                        <option value="low">Baixa</option>
+                    </select>
+                    <input type="date" id="task-date" placeholder="Data de vencimento" required>     
+                    <button type="submit">Adicionar</button>
+                    <button type="reset">Limpar Formulario</button>
+                </form>
+             </section>
+
+             <section class="task-controls">
+                <input type="search" id="task-search" placeholder="Pesquisar tarefa...">
+                <select id="task-filter">
+                    <option value="all">Todas</option>
+                    <option value="completed">Concluídas</option>
+                    <option value="pending">Pendentes</option>
+                </select>
+
+                <select id="task-sort">
+                    <option value="oldest">Mais Antigas</option>
+                    <option value="newest">Mais Novas</option>
+                    <option value="priority">Prioridade</option>
+                </select>
+             </section>
+
+            <section class="task-list-section">
+                <h2>Minhas Atividades</h2>
+
+                <div id="task-list"></div>
+
+                <div id="empty-state" hidden>
+                    <p>Nenhuma tarefa encontrada. Adicione uma nova tarefa para começar!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 TaskList. Todos os direitos reservados.</p>
+        </footer>
+    </body>
+</html>
